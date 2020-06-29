@@ -19,18 +19,18 @@ def find_pos_neg(comments):
     pos_text, neg_text = '', ''
 
     if not (pos.empty):
-        pos_text = pos.text.values[random.randint(0, pos.shape[0])]
+        pos_text = pos.text.values[random.randint(0, pos.shape[0]-1)]
         if pos_text == "Comment deleted by user or page manager":
-            pos_text = pos.text.values[random.randint(0, pos.shape[0])]
+            pos_text = pos.text.values[random.randint(0, pos.shape[0]-1)]
 
         most_liked_pos = pos.sort_values(by=['likes'])
         most_liked_pos_comment = most_liked_pos.text.head().values[0]
     else:
         [pos_text, most_liked_pos_comment] = 'Нет позитивных комментариев', 'Нет позитивных комментариев'
     if not (neg.empty):
-        neg_text = neg.text.values[random.randint(0, neg.shape[0])]
+        neg_text = neg.text.values[random.randint(0, neg.shape[0]-1)]
         if neg_text == "Comment deleted by user or page manager":
-            neg_text = neg.text.values[random.randint(0, neg.shape[0])]
+            neg_text = neg.text.values[random.randint(0, neg.shape[0]-1)]
 
         most_liked_neg = neg.sort_values(by=['likes'])
         most_liked_neg_comment = most_liked_neg.text.head().values[0]
