@@ -19,9 +19,9 @@ def find_pos_neg(comments):
     pos_text, neg_text = '', ''
 
     if not (pos.empty):
-        pos_text = pos.text.values[random.randint(0, neg.shape[0])]
+        pos_text = pos.text.values[random.randint(0, pos.shape[0])]
         if pos_text == "Comment deleted by user or page manager":
-            pos_text = pos.text.values[random.randint(0, neg.shape[0])]
+            pos_text = pos.text.values[random.randint(0, pos.shape[0])]
 
         most_liked_pos = pos.sort_values(by=['likes'])
         most_liked_pos_comment = most_liked_pos.text.head().values[0]
@@ -70,7 +70,7 @@ def predict(comments):
 
     return [f"{n_positives}@@{n_negatives}@@{ex_positive}@@{ex_negative}@@{most_liked_pos}@@{most_liked_neg}@@{positive_index}", comments.to_string()]
 
-
+# асинхронность пришлось убрать, потому что pythonanywhere не поддержирвает треды :(
 def async_handler():
     conn = sqlite3.connect('test2.db', check_same_thread=False)
     c = conn.cursor()
