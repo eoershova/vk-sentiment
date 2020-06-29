@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>VK Sentiment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+body {
+ background-image: url("https://img-fotki.yandex.ru/get/68630/2670595.dc/0_123451_9ccaa456_XXL.jpg");
+ background-color: #ED9E8D;
+ color: #ED9E8D;
+ text-shadow: 2px 2px #000000;
+
+
+
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-sm-offset-1">
+            <h1><b>Анализ тональности комментариев</b></h1>
+            <br>
+            <form role="form" method="POST" action="/">
+                <label for="fname">Токен сообщества:</label><br>
+                <input type="text" id="token" name="token"><br>
+                <label for="lname">Начало периода дд/мм/гг:</label><br>
+                <input type="text" id="begin" name="begin"><br>
+                <label for="endper">Конец периода дд/мм/гг:</label><br>
+                <input type="text" id="end" name="end">
+                <button class="btn btn-info" type="submit">Готово!</button>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4>Использованы технологии:</h4>
+
+        <h4>VK API и sqlite3 для сбора и хранения комментариев </h4>
+        <h4>Flask и Bootstrap для оформления</h4>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4>Номер запроса (скопируйте его в адресную строку, чтобы посмотреть результаты анализа):</h4>
+    <p id="UserMessage">{{ htmlText }}
+    <p>
+
+</div>
+</div>
+    <br>
+
+<br><br>
+	<footer class="text-secondary">
+		<div class="footer container justify-content-center align-items-center f" style="padding: 0.4vh; text-align: center; max-width: 2096px;">
+			Code available on <a href="https://github.com/eoershova/year3_final_project">GitHub</a>.
+		</div>
+	</footer>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
